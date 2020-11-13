@@ -1,2 +1,2 @@
 # NLB_Project
-Network load balancer for an instance pool with monitoring on Exoscale managed by Terraform
+Terraform managed Network load balancer for an instance pool on Exoscale monitored on prometheus
