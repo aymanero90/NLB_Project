@@ -1,9 +1,11 @@
 variable "zone" {
   type = string
+  default = "at-vie-1"
 }
 
 variable "template"{
   type = string
+  default = "Linux Ubuntu 20.04 LTS 64-bit"
 }
 
 data "exoscale_compute_template" "InstancePool" {
@@ -20,7 +22,7 @@ resource "exoscale_instance_pool" "myInstancePool" {
   disk_size = 10
   key_pair = ""
   zone = var.zone
-  user_data = file("UserData.sh")
+  user_data = file("userdata.sh")
 
 security_group_ids = [exoscale_security_group.SecurityGroup.id]
 }

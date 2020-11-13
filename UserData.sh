@@ -20,10 +20,18 @@ add-apt-repository \
 apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io
 
+## Run the load generator 
+## from the public docker image "janoszen/http-load-generator"
+
 docker run -d \
   --restart=always \
   -p 8080:8080 \
   janoszen/http-load-generator:1.0.1
+
+###  
+
+## Run the node exporter on each instance to be monitored on prometheus
+## from the public docker image "quay.io/prometheus/node-exporter"
 
 docker run -d \
   --restart=always \
@@ -32,3 +40,5 @@ docker run -d \
   -v "/:/host:ro,rslave" \
   quay.io/prometheus/node-exporter \
   --path.rootfs=/host
+
+###

@@ -7,13 +7,15 @@ terraform {
 }
 
 variable "exoscale_key" {
-  description = "Please enter the Exoscale API key" 
+  description = "Exoscale API key" 
   type = string
+  default = "..."
 }
 
 variable "exoscale_secret" {
-  description = "Please enter the Exoscale API secret"
+  description = "Exoscale API secret"
   type = string
+  default = "..."
 }
 
 provider "exoscale" {
